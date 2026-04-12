@@ -16,3 +16,15 @@ func TestSumArray(t *testing.T) {
 	})
 
 }
+
+func TestSumAll(t *testing.T) {
+	arr1 := []int{4, 5, 6}
+	arr2 := []int{7, 8, 9}
+
+	expected := 39
+	got := SumAll(arr1, arr2)
+
+	if got != expected {
+		t.Errorf("expected %d, got %d", expected, got)
+	}
+}
