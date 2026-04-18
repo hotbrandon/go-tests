@@ -9,10 +9,23 @@ func SumArray(arr []int) int {
 	return sum
 }
 
-func SumAll(arrays ...[]int) (sum int) {
+func SumAll(arrays ...[]int) []int {
+	var result []int
 	for _, arr := range arrays {
-		sum += SumArray(arr)
+		result = append(result, SumArray(arr))
 	}
 
-	return
+	return result
+}
+
+func SumAllTails(arrays ...[]int) []int {
+	var result []int
+	for _, arr := range arrays {
+		if len(arr) < 2 {
+			continue
+		}
+		result = append(result, SumArray(arr[1:]))
+	}
+
+	return result
 }
